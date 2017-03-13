@@ -31,12 +31,14 @@ public class ShiroFilter implements Filter{
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
         Principal principal = request.getUserPrincipal();
+        logger.info(request.getParameter("username"));
         logger.info("principal:"+(principal==null));
+        logger.info("question:"+(SecurityUtils.getSubject() == null));
         if(principal != null){
             Subject subjects = SecurityUtils.getSubject();
             SUser user = new SUser();
-            user.setUsername("shiro");
-            user.setPassword("123456");
+            user.setUsername("admin");
+            user.setPassword("111111");
             user.setsRole(new SRole("member"));
             if (user.getUsername().equals(principal.getName())) {
                 UsernamePasswordToken token = new UsernamePasswordToken(user.getUsername(), user

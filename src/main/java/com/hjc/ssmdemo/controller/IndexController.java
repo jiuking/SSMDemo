@@ -1,6 +1,11 @@
 package com.hjc.ssmdemo.controller;
 
+import com.hjc.ssmdemo.persistence.entity.SRole;
+import com.hjc.ssmdemo.persistence.entity.SUser;
 import com.hjc.ssmdemo.persistence.entity.TUser;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -28,11 +33,23 @@ public class IndexController {
 //        return view;
     }
     @RequestMapping(value = "login")
-    public String toIndex(HttpServletRequest request, Model model) {
-        TUser user = new TUser();
-        user.setUserName("测试111恭喜，翻山越岭，登录成功！");
-        model.addAttribute("user", user);
-        logger.info(user.getUserName());
-        return "showUser";
+    public String toIndex(String username, String pwd,Model model) {
+        logger.info("------------------login-----------");
+        TUser user1 = new TUser();
+        user1.setUserName("测试111恭喜，翻山越岭，登录成功！");
+        model.addAttribute("user", user1);
+        logger.info(user1.getUserName());
+
+        SUser user = new SUser("admin", "111111");
+        user.setsRole(new SRole("member"));
+        // 如果登陆成功
+        if (user.getUsername().equals(username) && user.getPassword().equals(pwd)) {
+            UsernamePasswordToken token = new UsernamePasswordToken(user.getUsername(), user
+                .getPassword().toString());
+            Subject subject = SecurityUtils.getSubject();
+            subject.login(token);
+            return "showUser";
+        }
+        return "redirect:index";
     }
 }

@@ -42,7 +42,7 @@ public class ShiroRealm extends AuthorizingRealm{
         String username = (String) getAvailablePrincipal(principalCollection);
         List<String> roles = new ArrayList<String>();
         // 简单默认一个用户与角色，实际项目应User user = userService.getByAccount(name);
-        SUser user = new SUser("shiro","123456");
+        SUser user = new SUser("admin","111111");
         SRole role = new SRole("member");
         user.setsRole(role);
         if(user.getUsername().equals(username)){
@@ -69,7 +69,7 @@ public class ShiroRealm extends AuthorizingRealm{
         if(Boolean.TRUE.equals(user.getLocked())){
             throw new LockedAccountException();
         }*/
-        SUser user = new SUser("shiro","123456");
+        SUser user = new SUser("admin","111111");
         if(user == null){
             throw new UnknownAccountException();
         }
