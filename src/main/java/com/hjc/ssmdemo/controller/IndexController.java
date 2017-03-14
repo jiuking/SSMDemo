@@ -59,18 +59,18 @@ public class IndexController {
         try {
             UsernamePasswordToken token = new UsernamePasswordToken(username, pwd);
             Subject subject = SecurityUtils.getSubject();
-            if(subject == null ||subject.getPrincipal() == null|| !subject.isAuthenticated()) {
+            //if(subject == null ||subject.getPrincipal() == null|| !subject.isAuthenticated()) {感觉没必要，登录时踢人因换个地方判断
 
 //            if(!subject.isAuthenticated()) {
                 subject.login(token);
                 result.put("message", "登录成功");
                 result.put("status", "S");
                 return result;
-            }else{//多地点登录
+           /* }else{//多地点登录
                 result.put("message","账号另地方登录");
                 result.put("status","F");
                 return result;
-            }
+            }*/
             /*}else{//重复登录
 //                SUser suser = (SUser) subject.getPrincipal();
                 result.put("message","重复登录");

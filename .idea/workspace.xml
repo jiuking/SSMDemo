@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cefaa5c5-3588-4bf3-bf25-4f6575f3041a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resource/jquery-3.1.1.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/hjc/ssmdemo/controller/IndexController.java" afterPath="$PROJECT_DIR$/src/main/java/com/hjc/ssmdemo/controller/IndexController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/hjc/ssmdemo/shiro/ExtendFormAuthenticationFilter.java" afterPath="$PROJECT_DIR$/src/main/java/com/hjc/ssmdemo/shiro/ExtendFormAuthenticationFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/hjc/ssmdemo/shiro/ShiroRealm.java" afterPath="$PROJECT_DIR$/src/main/java/com/hjc/ssmdemo/shiro/ShiroRealm.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/applicationContext-shiro.xml" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext-shiro.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -52,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ExtendFormAuthenticationFilter.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ExtendFormAuthenticationFilter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hjc/ssmdemo/shiro/ExtendFormAuthenticationFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="25" column="119" lean-forward="false" selection-start-line="25" selection-start-column="119" selection-end-line="25" selection-end-column="119" />
+            <state relative-caret-position="297">
+              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -87,8 +78,8 @@
       <file leaf-file-name="ShiroRealm.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hjc/ssmdemo/shiro/ShiroRealm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-9">
-              <caret line="80" column="9" lean-forward="true" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="9" />
+            <state relative-caret-position="747">
+              <caret line="93" column="31" lean-forward="true" selection-start-line="93" selection-start-column="31" selection-end-line="93" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1944#1952#0" expanded="true" />
@@ -97,15 +88,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IndexController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="IndexController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hjc/ssmdemo/controller/IndexController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="63" column="46" lean-forward="true" selection-start-line="63" selection-start-column="46" selection-end-line="63" selection-end-column="46" />
+            <state relative-caret-position="167">
+              <caret line="61" column="115" lean-forward="false" selection-start-line="61" selection-start-column="115" selection-end-line="61" selection-end-column="115" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2149#2165#0" expanded="true" />
-                <element signature="e#3976#3991#0" expanded="true" />
+                <element signature="e#4000#4015#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -187,8 +178,8 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/hjc/ssmdemo/shiro/ShiroRealm.java" />
         <option value="$PROJECT_DIR$/src/main/resources/applicationContext-shiro.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hjc/ssmdemo/controller/IndexController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hjc/ssmdemo/shiro/ExtendFormAuthenticationFilter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hjc/ssmdemo/controller/IndexController.java" />
       </list>
     </option>
   </component>
@@ -1026,7 +1017,7 @@
       <option name="presentableId" value="Default" />
       <updated>1489028973392</updated>
       <workItem from="1489028978707" duration="75235000" />
-      <workItem from="1489473744410" duration="9801000" />
+      <workItem from="1489473744410" duration="10344000" />
     </task>
     <task id="LOCAL-00001" summary="添加shiro框架，以及存在拦截问题filter出错。未拦截到未作出授权的url。">
       <created>1489140366093</created>
@@ -1049,7 +1040,14 @@
       <option name="project" value="LOCAL" />
       <updated>1489399775061</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="已解决处理ajax登录及返回登录错误信息&#10;新增退出功能。考虑同时刻一个账号一个用户">
+      <created>1489486420942</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1489486420942</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1085,7 +1083,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85036000" />
+    <option name="totallyTimeSpent" value="85579000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1114,7 +1112,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15431164" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15431164" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
@@ -1173,7 +1171,9 @@
     <MESSAGE value="添加shiro框架，以及存在拦截问题filter出错。未拦截到未作出授权的url。" />
     <MESSAGE value="添加sql语句文件" />
     <MESSAGE value="shiro登录验证完毕，考虑处理ajax登录及返回登录错误信息" />
-    <option name="LAST_COMMIT_MESSAGE" value="shiro登录验证完毕，考虑处理ajax登录及返回登录错误信息" />
+    <MESSAGE value="已解决处理ajax登录及返回登录错误信息&#10;新增退出功能。考虑同时刻一个账号一个用户" />
+    <MESSAGE value="暂时解决同时刻一个账号一个用户，更好的用户体验，当刷新浏览器时，给出提示&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="暂时解决同时刻一个账号一个用户，更好的用户体验，当刷新浏览器时，给出提示&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1535,6 +1535,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hjc/ssmdemo/shiro/ExtendFormAuthenticationFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext-shiro.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1724">
@@ -1545,8 +1555,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hjc/ssmdemo/shiro/ShiroRealm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9">
-          <caret line="80" column="9" lean-forward="true" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="9" />
+        <state relative-caret-position="747">
+          <caret line="93" column="31" lean-forward="true" selection-start-line="93" selection-start-column="31" selection-end-line="93" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1944#1952#0" expanded="true" />
@@ -1556,22 +1566,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hjc/ssmdemo/controller/IndexController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="63" column="46" lean-forward="true" selection-start-line="63" selection-start-column="46" selection-end-line="63" selection-end-column="46" />
+        <state relative-caret-position="167">
+          <caret line="61" column="115" lean-forward="false" selection-start-line="61" selection-start-column="115" selection-end-line="61" selection-end-column="115" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2149#2165#0" expanded="true" />
-            <element signature="e#3976#3991#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hjc/ssmdemo/shiro/ExtendFormAuthenticationFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="25" column="119" lean-forward="false" selection-start-line="25" selection-start-column="119" selection-end-line="25" selection-end-column="119" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#4000#4015#0" expanded="true" />
           </folding>
         </state>
       </provider>
