@@ -5,18 +5,25 @@ import com.hjc.ssmdemo.persistence.entity.SRole;
 import com.hjc.ssmdemo.persistence.entity.SUser;
 import com.hjc.ssmdemo.persistence.entity.User;
 import com.hjc.ssmdemo.service.UserService;
+import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationException;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
+import org.apache.shiro.session.Session;
+import org.apache.shiro.session.mgt.eis.SessionDAO;
 import org.apache.shiro.subject.PrincipalCollection;
+import org.apache.shiro.subject.support.DefaultSubjectContext;
 import org.apache.shiro.util.ByteSource;
+import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
+import org.apache.shiro.web.session.mgt.DefaultWebSessionManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -28,6 +35,9 @@ public class ShiroRealm extends AuthorizingRealm{
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private SessionDAO sessionDAO;
     /**
      * 授权
      * @param principalCollection
@@ -62,6 +72,13 @@ public class ShiroRealm extends AuthorizingRealm{
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
         logger.info("认证");
         String username = (String) token.getPrincipal();
+        Collection<Session> sessions = sessionDAO.getActiveSessions();
+        for(Session session:sessions){
+            String loginUsername = String.valueOf(session.getAttribute(DefaultSubjectContext.PRINCIPALS_SESSION_KEY));//获得session中已经登录用户的名字
+            if(username.equals(loginUsername)){  //这里的username也就是当前登录的username
+                sessionDAO.delete(session);;  //这里就把session清除，
+            }
+        }
        /* User user = userService.findByUsername(username);
         if(user == null){
             throw new UnknownAccountException();

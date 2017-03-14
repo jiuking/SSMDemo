@@ -2,18 +2,22 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:mvc="http://www.springframework.org/schema/mvc"
         xsi:schemaLocation="
        http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context
-       http://www.springframework.org/schema/context/spring-context.xsd">
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
     <!-- 自动扫描 -->
     <context:component-scan base-package="com.hjc.ssmdemo" />
     <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
         <property name="securityManager" ref="securityManager" />
         <property name="loginUrl" value="/index" />
         <property name="unauthorizedUrl" value="/unauthorized" />
-        <!--<property name="filters">
+       <!-- <property name="filters">
             <map>
                 <entry key="authc" value-ref="shiro"></entry>
             </map>
@@ -22,20 +26,37 @@
             <value>
                 /index=anon<!-- 默认的 -->
                 /login=anon
+                /resource/*=anon
                 /**=authc
             </value>
         </property>
     </bean>
    <!-- <bean id="shiro" class="com.hjc.ssmdemo.shiro.ShiroFilter"/>-->
 
+    <!--<bean id="shiro" class="com.hjc.ssmdemo.shiro.ExtendFormAuthenticationFilter"/>-->
+
     <bean id="shiroRealm" class="com.hjc.ssmdemo.shiro.ShiroRealm" />
+
+    <bean id="sessionDAO" class="org.apache.shiro.session.mgt.eis.MemorySessionDAO"></bean>
+
+  <!--  <bean id="sessionIdCookie" class="org.apache.shiro.web.servlet.SimpleCookie">
+        <constructor-arg name="name" value="SHRIOSESSIONID"/> 没用
+    </bean>-->
+    <!-- 配置shiro session 的一个管理器 -->
+    <bean id="sessionManager" class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">
+        <property name="sessionDAO" ref="sessionDAO"></property>
+    </bean>
+    <!-- 配置shiro 缓存的一个管理器 -->
 
     <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
         <property name="realm" ref="shiroRealm" />
+        <!-- shiro session管理器 -->
+        <property name="sessionManager" ref="sessionManager"></property>
         <!-- 需要使用cache的话加上这句
         <property name="cacheManager" ref="shiroEhcacheManager" />
          -->
     </bean>
+
 
     <!-- 用户授权信息Cache, 采用EhCache，需要的话就配置上此信息
     <bean id="shiroEhcacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">

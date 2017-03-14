@@ -9,13 +9,37 @@
 <html>
 <head>
     <title>Title</title>
+    <script type="text/javascript" src="./resource/jquery-3.1.1.min.js"></script>
 </head>
 <body>
-<form action="../ssmdemo/login" method="post">
-    name:<input type="text" name="username" /><br/>
-    pawd:<input type="password" name="pwd" /><br/>
+<form id="formId">
+    name:<input id="name" type="text" name="username" /><br/>
+    pawd:<input id="pwd" type="password" name="pwd" /><br/>
     <input type="hidden" name="hidden" value="隐藏" />
-    <input type="submit" value="submit"/>
+    <input type="button" value="submit" onclick="test();"/>
 </form>
+<script>
+    function test() {
+        $.ajax({
+            type: "POST",
+            url: "./login",
+            data: $("#formId").serialize(),
+            async: false,
+            error: function (e) {
+                console.log(e)
+                alert("Connection error");
+            },
+            success: function (data) {
+                console.log(data)
+                if(data.status == "F"){
+                    alert(data.message);
+                    location.href="./index";
+                    return;
+                }
+                location.href="./success";
+            }
+        });
+    }
+</script>
 </body>
 </html>
