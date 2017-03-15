@@ -49,5 +49,10 @@
         <!-- 内存中的最大值 -->
         <property name="maxInMemorySize" value="40960" />
     </bean>
-
+    <!--<bean id="propertyConfigurer"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="classpath:fileuploadurl.properties" />
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
+    </bean>-->
+    <context:property-placeholder location="classpath:fileuploadurl.properties" ignore-unresolvable="true"/>
 </beans>

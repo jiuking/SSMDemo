@@ -16,7 +16,9 @@
     name:<input id="name" type="text" name="username" /><br/>
     pawd:<input id="pwd" type="password" name="pwd" /><br/>
     <input type="hidden" name="hidden" value="隐藏" />
+    验证码：<input type="text" name="validateCode" />&nbsp;&nbsp;<img id="validateCodeImg" src="./validateCode" />
     <input type="button" value="submit" onclick="test();"/>
+
 </form>
 <script>
     function test() {
