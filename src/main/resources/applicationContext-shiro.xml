@@ -36,7 +36,21 @@
 
     <!--<bean id="shiro" class="com.hjc.ssmdemo.shiro.ExtendFormAuthenticationFilter"/>-->
 
-    <bean id="shiroRealm" class="com.hjc.ssmdemo.shiro.ShiroRealm" />
+    <!-- 缓存管理器 使用Ehcache实现 -->
+    <bean id="cacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
+        <property name="cacheManagerConfigFile" value="classpath:ehcache.xml" />
+    </bean>
+
+    <!-- 凭证匹配器 -->
+    <bean id="credentialsMatcher" class="com.hjc.ssmdemo.shiro.RetryLimitHashedCredentialsMatcher">
+        <constructor-arg ref="cacheManager" />
+        <property name="hashAlgorithmName" value="md5"/>
+        <property name="hashIterations" value="2"/>
+        <property name="storedCredentialsHexEncoded" value="true"/>
+    </bean>
+    <bean id="shiroRealm" class="com.hjc.ssmdemo.shiro.ShiroRealm">
+        <property name="credentialsMatcher" ref="credentialsMatcher"/>
+    </bean>
 
     <bean id="sessionDAO" class="org.apache.shiro.session.mgt.eis.MemorySessionDAO"></bean>
 

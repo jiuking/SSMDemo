@@ -5,10 +5,7 @@ import com.hjc.ssmdemo.persistence.entity.SUser;
 import com.hjc.ssmdemo.persistence.entity.TUser;
 import com.hjc.ssmdemo.util.ValidateCode;
 import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.IncorrectCredentialsException;
-import org.apache.shiro.authc.LockedAccountException;
-import org.apache.shiro.authc.UnknownAccountException;
-import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.authc.*;
 import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -99,11 +96,16 @@ public class IndexController {
             return result;
         }catch (LockedAccountException e) {
             result.put("message","账号被锁定");
-            result.put("status","S");
+            result.put("status","F");
             return result;
-        } catch (Exception e){
+        }catch (ExcessiveAttemptsException e){
+            result.put("message","密码错误5次，已限制登录");
+            result.put("status","F");
+            return result;
+        }
+        catch (Exception e){
             result.put("message","未知错误");
-            result.put("status","S");
+            result.put("status","F");
             return result;
         }
 //        return "redirect:index";

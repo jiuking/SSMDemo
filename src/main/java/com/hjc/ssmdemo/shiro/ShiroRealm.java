@@ -79,22 +79,22 @@ public class ShiroRealm extends AuthorizingRealm{
                 sessionDAO.delete(session);;  //这里就把session清除，
             }
         }
-       /* User user = userService.findByUsername(username);
+        User user = userService.findByUsername(username);
         if(user == null){
             throw new UnknownAccountException();
         }
         if(Boolean.TRUE.equals(user.getLocked())){
             throw new LockedAccountException();
-        }*/
-        SUser user = new SUser("admin","111111");
-        if(user == null){
-            throw new UnknownAccountException();
         }
+        /*SUser user = new SUser("admin","111111");
+        if(!user.getUsername().equalsIgnoreCase(username)){
+            throw new UnknownAccountException();
+        }*/
         return new SimpleAuthenticationInfo(
             user.getUsername(),
             user.getPassword(),
-//            ByteSource.Util.bytes(user.getCredentialsSalt()),//salt = username + salt
-                getName()
-                );
+            ByteSource.Util.bytes(user.getCredentialsSalt()),//salt = username + salt
+            getName()
+            );
     }
 }
